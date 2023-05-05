@@ -26,15 +26,17 @@ class MyApp extends StatelessWidget {
           itemBuilder: (BuildContext context, int index) {
             //{'name': 'Item 1', 'description': 'Description for Item 1'}
             final item = _items[index];
-            return ListTile(
-              onTap: () {
-                Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                        builder: ((context) => Recive(data: item))));
-              },
-              title: Text(item['name']!),
-              subtitle: Text(item['description']!),
+            return Card(
+              child: ListTile(
+                onTap: () {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: ((context) => Recive(data: item))));
+                },
+                title: Text(item['name']!),
+                subtitle: Text(item['description']!),
+              ),
             );
           },
         ),
